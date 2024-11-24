@@ -1,0 +1,90 @@
+/* src/app/components/productos/productos.component.css */
+.productos-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .producto-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .producto-imagen {
+    height: 200px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+  }
+  
+  .producto-info {
+    padding: 15px;
+  }
+  
+  h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+  }
+  
+  .descripcion {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  
+  .producto-detalles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .precio {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2563eb;
+  }
+  
+  .stock {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .btn-agregar {
+    width: 100%;
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-agregar:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .no-productos {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+  }

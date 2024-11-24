@@ -1,0 +1,33 @@
+<div class="productos-container">
+  <h2>Nuestras Joyas</h2>
+
+  <div class="productos-grid">
+    <div *ngFor="let producto of productos" class="producto-card">
+      <div class="producto-imagen">
+        <span>Imagen del producto</span>
+      </div>
+      
+      <div class="producto-info">
+        <h3>{{ producto.nombre }}</h3>
+        <p class="descripcion">{{ producto.descripcion }}</p>
+        
+        <div class="producto-detalles">
+          <span class="precio">${{ producto.precio }}</span>
+          <span class="stock">Stock: {{ producto.cantidad }}</span>
+        </div>
+        
+        <button (click)="agregarAlCarrito(producto)" class="btn-agregar">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="productos.length === 0" class="no-productos">
+    No se encontraron productos para mostrar.
+  </div>
+
+  <!-- Mensaje de confirmación -->
+  <div id="mensaje" style="color: green; font-size: 25px; position: fixed; top: 20px; left: 20px; padding: 10px; background-color: rgba(0, 0, 0, 0.6); color: white; border-radius: 5px; z-index: 1000;">
+  </div>
+</div>

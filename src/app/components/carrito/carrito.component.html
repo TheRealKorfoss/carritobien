@@ -1,0 +1,48 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-6">Carrito de Compras</h2>
+  
+    <!-- Si el carrito está vacío -->
+    <div *ngIf="productosCarrito.length === 0" class="text-center py-8">
+      <p class="text-gray-500 mb-4">No hay productos en el carrito</p>
+      <a routerLink="/productos" class="text-blue-500 hover:text-blue-700 underline">
+        Volver a la tienda
+      </a>
+    </div>
+  
+    <!-- Si hay productos en el carrito -->
+    <div *ngIf="productosCarrito.length > 0">
+      <!-- Lista de productos en el carrito -->
+      <div class="space-y-4">
+        <div *ngFor="let producto of productosCarrito" class="border p-4 rounded">
+          <h3 class="font-bold">{{ producto.nombre }}</h3>
+          <p>Precio: ${{ producto.precio }}</p>
+          <p>Cantidad: {{ producto.cantidad_seleccionada }}</p>
+          <div class="flex items-center space-x-2 mt-2">
+            <button (click)="actualizarCantidad(producto, 1)" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+              Incrementar
+            </button>
+            <button (click)="actualizarCantidad(producto, -1)" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600" 
+                    [disabled]="producto.cantidad_seleccionada <= 1">
+              Decrementar
+            </button>
+            <button (click)="eliminarProducto(producto.id)" class="bg-gray-300 text-gray-800 px-2 py-1 rounded hover:bg-gray-400">
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Sección de PayPal -->
+      <div class="mt-8 border-t pt-4">
+        <div class="text-right mb-4">
+          <p class="text-xl font-bold">
+            Total: ${{ obtenerTotal() }}
+          </p>
+        </div>
+        
+        <!-- Contenedor para PayPal -->
+        <div #paypalContainer class="max-w-md mx-auto mt-4"></div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,50 @@
+.pago-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .productos-lista {
+    margin: 20px 0;
+  }
+  
+  .producto-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .producto-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .total-seccion {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+  }
+  
+  #paypal-button-container {
+    margin-top: 20px;
+    max-width: 500px;
+  }
+  
+  .no-productos {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .btn-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+  }

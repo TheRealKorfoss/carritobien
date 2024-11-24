@@ -1,0 +1,32 @@
+<div class="pago-container">
+    <div *ngIf="productosEnCarrito.length > 0; else noProductos">
+      <!-- Resumen de productos -->
+      <h2>Resumen de tu compra</h2>
+      <div class="productos-lista">
+        <div *ngFor="let producto of productosEnCarrito" class="producto-item">
+          <div class="producto-detalles">
+            <h3>{{ producto.nombre }}</h3>
+            <p>Cantidad: {{ producto.cantidad_seleccionada }}</p>
+            <p>Precio unitario: ${{ producto.precio }}</p>
+            <p>Subtotal: ${{ producto.precio * producto.cantidad_seleccionada }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Total -->
+      <div class="total-seccion">
+        <h2>Total a pagar: ${{ totalCarrito }}</h2>
+      </div>
+  
+      <!-- Botón PayPal -->
+      <div id="paypal-button-container"></div>
+    </div>
+  
+    <ng-template #noProductos>
+      <div class="no-productos">
+        <h3>No hay productos en el carrito</h3>
+        <a routerLink="/productos" class="btn-volver">Volver a productos</a>
+      </div>
+    </ng-template>
+  </div>
+  
