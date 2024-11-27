@@ -1,0 +1,183 @@
+/* Contenedor principal */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Elementos decorativos de fondo */
+  .register-container::before,
+  .register-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  .register-container::before {
+    width: 300px;
+    height: 300px;
+    background: rgba(74, 144, 226, 0.1);
+    top: -150px;
+    right: -150px;
+  }
+  
+  .register-container::after {
+    width: 200px;
+    height: 200px;
+    background: rgba(74, 144, 226, 0.15);
+    bottom: -100px;
+    left: -100px;
+  }
+  
+  /* Tarjeta de registro */
+  .register-card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Encabezado */
+  h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Grupos de formulario */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Etiquetas */
+  label {
+    display: block;
+    color: #4a5568;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Campos de entrada */
+  .form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  }
+  
+  /* Estado de error en los campos */
+  .form-control.ng-invalid.ng-touched {
+    border-color: #e53e3e;
+  }
+  
+  /* Mensajes de error */
+  .error-message {
+    color: #e53e3e;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  /* Botón de envío */
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    background: #357abd;
+    transform: translateY(-1px);
+  }
+  
+  .submit-btn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Link de inicio de sesión */
+  .login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #4a5568;
+    font-size: 0.95rem;
+  }
+  
+  .login-link a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .login-link a:hover {
+    color: #357abd;
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .register-container {
+      padding: 1rem;
+    }
+  
+    .register-card {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .form-control {
+      padding: 0.7rem 0.9rem;
+    }
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .register-card {
+    animation: fadeIn 0.5s ease-out;
+  }

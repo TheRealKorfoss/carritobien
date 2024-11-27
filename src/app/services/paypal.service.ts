@@ -14,7 +14,7 @@ export class PaypalService {
 
       const script = document.createElement('script');
       script.id = 'paypal-script';
-      script.src = 'https://www.paypal.com/sdk/js?client-id=ATBp1CqPxrI04O0dPQGg_MrZ2pJzXoFcSWmKv6U0T5rVVW_uFa7hYYnb1RKdF09CKxgGXQNFvnHzJJ3B';
+      script.src = 'https://www.paypal.com/sdk/js?client-id=AZV7u_LpMa_6HPCHbDdYHN48us0rQzCLyqOd9E1I41RYJIBHpUwsJKye3tir8-ASQrv7ZIT_UbyzYKZI';
       script.onload = () => resolve();
       script.onerror = () => reject(new Error('Error al cargar PayPal SDK'));
 
